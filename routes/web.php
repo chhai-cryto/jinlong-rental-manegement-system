@@ -15,7 +15,7 @@ Route::get('dashboard', function() {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/tenants', [TenantController::class, 'tenants']);
+// Route::get('/tenants', [TenantController::class, 'tenants']);
 
 Route::get('/rent', [RentController::class, 'index'])->name('rent.index');
 
@@ -29,3 +29,5 @@ Route::get('/properties/create', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+Route::get('/tenants', [TenantController::class, 'index'])->name('tenants.index');

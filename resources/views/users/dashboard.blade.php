@@ -20,37 +20,14 @@
 
         <nav class="mt-4 px-4 space-y-2">
 
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
-                Dashboard
-            </a>
-
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
-                Properties
-            </a>
-
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
-                Rooms
-            </a>
-
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
-                Tenants
-            </a>
-
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
-                Payments
-            </a>
-
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
-                Leases
-            </a>
-
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
-                Maintenance
-            </a>
-
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-red-600">
-                Logout
-            </a>
+            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">Dashboard</a>
+            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">Properties</a>
+            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">Rooms</a>
+            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">Tenants</a>
+            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">Payments</a>
+            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">Leases</a>
+            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700"> Maintenance</a>
+            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-red-600">Logout</a>
 
         </nav>
 

@@ -18,17 +18,8 @@ class TenantController extends Controller
     // }
 
 
-
-
-
-
-    public function tenants()
+    public function index()
     {
-        $tenants = Tenant::all();
-        
-
-        return view('contact.tenant', compact('tenants'));
+        return view('tenants.index');   
     }
-
-    
-}
+};
