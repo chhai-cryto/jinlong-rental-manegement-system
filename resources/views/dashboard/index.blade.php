@@ -373,7 +373,7 @@
   <!-- CONTENT -->
   <main class="content">
     <div class="page-header">
-      <div class="page-title">Welcome back 👋</div>
+      <div class="page-title">Welcome back </div>
       <div class="page-sub">Here's what's happening with your properties today, April 23 2026.</div>
     </div>
 
