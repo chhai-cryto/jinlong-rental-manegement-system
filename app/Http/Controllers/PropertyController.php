@@ -6,17 +6,8 @@ use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
-
-    public function index()
-    {
-        return view('properties.store');
+    public function index() {
+        return view('property.index');
     }
-
-    public function store(Request $request)
-    {   
-        $name = $request->input('name');
-        dd($request);
-        
-    }
-    
+   
 }
