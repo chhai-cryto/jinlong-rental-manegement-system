@@ -8,6 +8,7 @@ use App\Http\Controllers\RentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LeaseController;
 
 route::get('/', function () {
     return view('welcome');
@@ -45,6 +46,14 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/tenants', [TenantController::class, 'index'])->name('tenants.index');
 
+
 Route::get('/payment', function () {
     return view('payment.index');
 })->name('payments');
+
+Route::get('layout', function () {
+    return view('layout');
+});
+
+Route::get('/leases', [LeaseController::class, 'index'])->name('leases.index');
+

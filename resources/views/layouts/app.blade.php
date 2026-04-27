@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -80,7 +81,6 @@
             </a>
         </nav>
 
-        <!-- Logout at bottom -->
         <div class="mt-auto pt-4 border-t border-gray-100">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -133,6 +133,28 @@
     </div>
 
 </div>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="bg-red-500">
+
+    <x-hearder />
+
+     <div class="flex">
+
+        <x-sidebar />
+    
+
+        <div class="ml-64 p-6 w-full mt-16">
+            @yield('content')
+        </div>
+     </div>
+    
 
 </body>
 </html>
