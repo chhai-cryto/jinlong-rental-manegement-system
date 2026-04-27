@@ -20,23 +20,23 @@
 
         <nav class="mt-4 px-4 space-y-2">
 
-            <a href="#" class="block px-4 py-3 rounded-lg bg-slate-700">
+            <a href="users" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
                 Dashboard
             </a>
 
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
+            <a href="properties" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
                 Properties
             </a>
 
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
+            <!-- <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
                 Rooms
-            </a>
+            </a> -->
 
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
+            <a href="tenants" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
                 Tenants
             </a>
 
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
+            <a href="payment" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
                 Payments
             </a>
 

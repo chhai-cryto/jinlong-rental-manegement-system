@@ -1,4 +1,9 @@
 
+<x-sidebar/>
+<x-hearder/>
+<x-cards/>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,3 +147,4 @@
 
 </body>
 </html>
+
