@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\CardsController;
 use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\RentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 
 route::get('/', function () {
@@ -26,8 +28,23 @@ Route::get('/properties/create', function () {
 });
 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+// Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+
+
+
+Route::get('/login', function () {
+    return view('login.index');
+})->name('login');
+
+Route::post('/login', function (Request $request) {
+    return view('users.index');
+})->name('users.index');
+
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/tenants', [TenantController::class, 'index'])->name('tenants.index');
+
+Route::get('/payment', function () {
+    return view('payment.index');
+})->name('payments');

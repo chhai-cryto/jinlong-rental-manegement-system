@@ -9,18 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('payments', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('lease_id');
-            $table->decimal('amount', 10, 2);
-            $table->date('payment_date');
-            $table->enum('status', ['paid', 'unpaid']);
-            $table->enum('method', ['cash', 'bank', 'online']);
-            $table->timestamps();
-        });
-    }
+    public function up()
+{
+    Schema::create('payments', function (Blueprint $table) {
+        $table->id();
+        $table->foreignId('tenant_id')->constrained()->cascadeOnDelete();
+        $table->foreignId('property_id')->constrained()->cascadeOnDelete();
+        $table->decimal('amount', 10, 2);
+        $table->date('payment_date');
+        $table->string('method'); // cash, bank, etc
+        $table->string('status')->default('paid'); // paid, pending
+        $table->text('note')->nullable();
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

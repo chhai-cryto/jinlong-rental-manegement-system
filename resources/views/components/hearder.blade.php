@@ -13,7 +13,7 @@
 
         <header class="bg-gray-200 shadow px-6 py-5 flex justify-between items-center">
 
-            <h1 class="text-4xl font-bold text-blue-950">
+            <h1 class="text-3xl font-bold text-blue-950">
                 Dashboard
             </h1>
 

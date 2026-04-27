@@ -6,20 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
-    protected $table = 'payments';
-
-    protected $primaryKey = 'id';
-
     protected $fillable = [
-        'lease_id',
+        'tenant_id',
+        'property_id',
         'amount',
         'payment_date',
-        'status',
         'method',
+        'status',
+        'note'
     ];
 
-    public function lease()
+    public function tenant()
     {
-        return $this->belongsTo(Lease::class);
+        return $this->belongsTo(Tenant::class);
+    }
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class);
     }
 }
