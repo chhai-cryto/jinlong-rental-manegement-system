@@ -40,7 +40,7 @@
                 Payments
             </a>
 
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
+            <a href="leases" class="block px-4 py-3 rounded-lg hover:bg-slate-700">
                 Leases
             </a>
 

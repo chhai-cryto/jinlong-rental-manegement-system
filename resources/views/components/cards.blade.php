@@ -1,4 +1,4 @@
-<section class="ml-64 flex-1 p-6 bg-gray-50 min-h-screen">
+<section class="ml-64 flex-1 p-6 bg-gray-50 ">
     <div class="mb-8">
         <!-- <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1> -->
         <p class="text-gray-500 mt-1">Overview of your rental management system</p>
