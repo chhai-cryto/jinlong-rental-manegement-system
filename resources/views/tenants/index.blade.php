@@ -12,8 +12,7 @@
     <title>jinlong-rental-manegement-system</title>
 </head>
 <body>
-    <x-sidebar />
-    <x-hearder />
+    
     
     <div class=" ml-64 p-4">
         

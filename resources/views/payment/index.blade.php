@@ -11,7 +11,7 @@
 </head>
 <body class="bg-gray-100">
 
-<div class="p-6">
+<div class="p-6 ">
 
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Payment Form -->
-    <div class="bg-white p-6 rounded-2xl shadow mb-6">
+    <div class="bg-white p-6 rounded-2xl shadow mb-6 w-60">
         <h2 class="text-lg font-semibold mb-4">New Payment</h2>
 
         <div class="grid grid-cols-2 gap-4">
