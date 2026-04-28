@@ -23,13 +23,15 @@ Route::get('dashboard', function() {
 Route::get('/rent', [RentController::class, 'index'])->name('rent.index');
 
 //from
-Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
-Route::get('/properties/create', function () {
-    return view('properties.create');
-});
+// Route::post('/properties', [PropertyController::class, 'store'])->name('properties.store');
+// Route::get('/properties/create', function () {
+//     return view('properties.create');
+// });
 
 
 // Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+
+Route::get('/properties', [PropertyController::class, 'index']);
 
 
 
