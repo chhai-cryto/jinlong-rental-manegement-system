@@ -4,106 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lease Management</title>
+
     @vite('resources/css/app.css')
 </head>
+
 <body class="bg-gray-100">
 
-    <x-sidebar />
-    <x-hearder />
+<x-sidebar />
+<x-hearder />
 
-    <div class="ml-64 p-6">
+<div class="ml-64 p-6">
 
-        <div class="flex justify-between items-center mb-6">
-            <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
-                + New Lease
-            </a>
+    <!-- Button -->
+    <div class="mb-6">
+        <button onclick="document.getElementById('modal').classList.remove('hidden')"
+            class="px-4 py-2 bg-blue-600 text-white rounded">
+            + New Lease
+        </button>
+    </div>
+
+    <!-- Success -->
+    @if(session('success'))
+        <div class="mb-4 p-3 bg-green-100 text-green-700 rounded">
+            {{ session('success') }}
         </div>
+    @endif
 
-        <!-- Table -->
-        <div class="bg-white rounded-xl shadow overflow-hidden">
+    <!-- Table -->
+    <div class="bg-white shadow rounded-lg overflow-hidden">
 
-            <table class="w-full text-left">
+        <table class="w-full">
 
-                <thead class="bg-gray-50  text-sm uppercase">
+            <thead class="bg-gray-50 text-left">
+                <tr>
+                    <th class="p-4">Tenant </th>
+                    <th>Room</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Rent</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @forelse($leases as $lease)
+
+                    <tr class="border-t">
+
+                        <td class="p-4">
+                            {{ $lease->tenant_id }}
+                        </td>
+
+                        <td>
+                            {{ $lease->room_id }}
+                        </td>
+
+                        <td>
+                            {{ $lease->start_date }}
+                        </td>
+
+                        <td>
+                            {{ $lease->end_date }}
+                        </td>
+
+                        <td>
+                            ${{ $lease->rent_amount }}
+                        </td>
+
+                        <td>
+                            {{ $lease->status }}
+                        </td>
+
+                    </tr>
+
+                @empty
+
                     <tr>
-                        <th class="p-4">Tenant</th>
-                        <th>Room</th>
-                        <th>Start</th>
-                        <th>End</th>
-                        <th>Rent</th>
-                        <th>Status</th>
-                        <th class="text-right pr-16">Action</th>
-                    </tr>
-                </thead>
-
-                <tbody class="text-gray-700">
-
-                    <!-- Example Row -->
-                    <tr class="border-t hover:bg-gray-50 transition">
-                        <td class="p-4 font-medium">Lee Minho</td>
-                        <td>#102</td>
-                        <td>04 Jun 2025</td>
-                        <td>04 Jun 2026</td>
-                        <td>$300</td>
-
-                        <!-- Status -->
-                        <td>
-                            <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-700">
-                                Active
-                            </span>
-                        </td>
-
-                        <!-- Actions -->
-                        <td class="text-right pr-4 space-x-3">
-                            <button class="text-blue-600 hover:underline">Edit</button>
-                            <button class="text-red-600 hover:underline">Delete</button>
+                        <td colspan="6" class="p-4 text-center text-gray-500">
+                            No leases found
                         </td>
                     </tr>
 
-                    <tr class="border-t hover:bg-gray-50 transition">
-                        <td class="p-4 font-medium">Kim Jisoo</td>
-                        <td>#105</td>
-                        <td>10 Feb 2026</td>
-                        <td>10 Feb 2027</td>
-                        <td>$450</td>
+                @endforelse
 
-                        <td>
-                            <span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-700">
-                                Pending
-                            </span>
-                        </td>
+            </tbody>
 
-                        <td class="text-right pr-4 space-x-3">
-                            <button class="text-blue-600 hover:underline">Edit</button>
-                            <button class="text-red-600 hover:underline">Delete</button>
-                        </td>
-                    </tr>
-
-                    <tr class="border-t hover:bg-gray-50 transition">
-                        <td class="p-4 font-medium">IU</td>
-                        <td>#09</td>
-                        <td>03 Jan 2025</td>
-                        <td>03 Jan 2026</td>
-                        <td>$280</td>
-
-                        <td>
-                            <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-700">
-                                Expired
-                            </span>
-                        </td>
-
-                        <td class="text-right pr-4 space-x-3">
-                            <button class="text-blue-600 hover:underline">Edit</button>
-                            <button class="text-red-600 hover:underline">Delete</button>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-
-        </div>
+        </table>
 
     </div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center">
+
+    <div class="bg-white p-6 w-full max-w-xl rounded-lg relative">
+
+        <button onclick="document.getElementById('modal').classList.add('hidden')"
+            class="absolute top-2 right-2 text-xl">
+            ✕
+        </button>
+
+        <h2 class="text-xl font-bold mb-4">Create Lease</h2>
+
+        <form action="{{ route('leases.store') }}" method="POST" class="space-y-4">
+
+            @csrf
+
+            <!-- Tenant ID (manual input) -->
+            <input
+                type="text"
+                name="tenant_id"
+                placeholder="Enter Tenant ID"
+                class="w-full border p-2 rounded">
+
+            <!-- Room ID (manual input) -->
+            <input
+                type="text"
+                name="room_id"
+                placeholder="Enter Room ID"
+                class="w-full border p-2 rounded">
+
+            <!-- Start -->
+            <input type="date" name="start_date" class="w-full border p-2 rounded">
+
+            <!-- End -->
+            <input type="date" name="end_date" class="w-full border p-2 rounded">
+
+            <!-- Rent -->
+            <input type="number" name="rent_amount" placeholder="Rent" class="w-full border p-2 rounded">
+
+            <!-- Status -->
+            <select name="status" class="w-full border p-2 rounded">
+
+                <option value="Active">Active</option>
+                <option value="Pending">Pending</option>
+                <option value="Expired">Expired</option>
+
+            </select>
+
+            <button class="w-full bg-blue-600 text-white py-2 rounded">
+                Save
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 </body>
 </html>

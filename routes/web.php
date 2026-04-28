@@ -59,3 +59,5 @@ Route::get('layout', function () {
 
 Route::get('/leases', [LeaseController::class, 'index'])->name('leases.index');
 
+Route::post('/leases', [LeaseController::class, 'store'])->name('leases.store');
+

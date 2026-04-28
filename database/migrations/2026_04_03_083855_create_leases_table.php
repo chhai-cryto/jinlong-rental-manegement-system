@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('leases', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tenant_id');
-            $table->foreignId('room_id');
+            $table->string('tenant_id');
+            $table->string('room_id');
             $table->string('start_date');
             $table->string('end_date');
             $table->decimal('rent_amount', 10, 2);
