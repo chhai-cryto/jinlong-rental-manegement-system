@@ -11,10 +11,10 @@
 </head>
 <body class="bg-gray-100">
 
-<div class="p-6 ">
+<div class="ml-64">
 
     <!-- Header -->
-    <div class="flex justify-between items-center mb-6">
+    <div class="ml-54 flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold">Payments</h1>
         <button class="bg-blue-500 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-600">
             + Add Payment
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Payment Form -->
-    <div class="bg-white p-6 rounded-2xl shadow mb-6 w-60">
+    <div class="bg-white p-6 rounded-2xl shadow mb-6">
         <h2 class="text-lg font-semibold mb-4">New Payment</h2>
 
         <div class="grid grid-cols-2 gap-4">
